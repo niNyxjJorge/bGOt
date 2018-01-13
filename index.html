@@ -1,0 +1,59 @@
+<html ng-app="bagGoTrip">
+   <head>
+      <meta charset="utf-8">
+      <link href="components/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+      <link href="css/style.css" rel="stylesheet" type="text/css"/>
+      <script src="components/angular/angular.min.js" type="text/javascript"></script>
+      <script src="components/ngStorage/ngStorage.js" type="text/javascript"></script>
+      <script src="js/app.js" type="text/javascript"></script>
+      <script src="js/controllers/bagGoTripCtrl.js" type="text/javascript"></script>
+
+
+      <title>Bag Go! Trip </title>
+   </head>
+
+   <body ng-controller ="bagGoTripCtrl">
+
+      <div class="jumbotron"><h3>{{app}}</h3>
+         <img src="img/shutterstock_69112501.png" alt=""/>
+         <table class="table">
+            <tr>
+               <th></th>
+
+               <th><strong>Id</strong></th>
+               <th><strong>Objeto</strong></th> 
+               <th><strong>Qtd</strong></th>
+            </tr>
+
+            <tr ng-class="{strong:nItem.select}" ng-repeat="nItem in item">
+               <td><input type="checkbox" ng-model="nItem.select"></td>
+               <td>{{nItem.id}}</td>
+               <td>{{nItem.name}}</td>
+               <td>{{nItem.qtd}}</td>
+            </tr>
+         </table>
+
+         <hr>
+
+
+         <input type="text" ng-model="nItem.name" required class="form-control" placeholder="Objeto:">
+         <input type="number"  required ng-model="nItem.qtd" class="form-control"  placeholder="Quantidade:">
+
+         <button class="btn btn-primary btn-block" ng-click="addItem(nItem)"
+                 ng-disabled="!nItem.name || !nItem.qtd">Add Item</button>
+
+         <button class="btn btn-danger btn-block" ng-click="removeItem()" 
+                 ng-disabled="!selectedItem(item)">Remove</button>
+
+
+
+
+      </div>
+
+      <br/><br/>
+      <div class="rodape">
+         <i> Powered by Jorge Luiz</i>
+      </div>
+   </body>
+</html>
+
