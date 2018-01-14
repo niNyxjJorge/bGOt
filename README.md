@@ -1,7 +1,7 @@
 # bGOt
 
 
-+bag-go-trip.000webhostapp.com
+-bag-go-trip.000webhostapp.com
  prepare your bags in advance, and leave nothing behind
  
 
